@@ -1,0 +1,41 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Back-end app for Resultee",
+  "author": "Martin Křivda",
+  "license": "MIT",
+  "main": "build/main.js",
+  "private": true,
+  "scripts": {
+    "dev": "backpack",
+    "dev:debug": "backpack dev --inspect --debug-brk",
+    "start": "node ./build/main.js",
+    "prestart": "run-s build",
+    "build": "backpack build",
+    "build:watch": "nodemon --watch ./src --exec 'npm run build'",
+    "postbuild": "nodetouch tmp/restart.txt",
+    "prettier": "prettier --write \"src/**/*.js\" README.md"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^6.4.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "csv-parser": "^2.3.2",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.2.0",
+    "hashids": "^2.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "mariadb": "^2.1.2",
+    "multer": "^1.4.2"
+  },
+  "devDependencies": {
+    "backpack-core": "^0.8.4",
+    "node-pre-gyp": "0.12.0",
+    "nodemon": "1.19.3",
+    "npm-run-all": "4.1.5",
+    "prettier": "1.18.2",
+    "touch": "3.1.0"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "Organisms": {
+    "NotLoggedInHeader": {
+      "LoginLink": "Přihlásit",
+      "RegisterLink": "Registrovat"
+    }
+  },
+  "Page": {
+    "Login": {
+      "FormHeading": "Přihlášení do aplikace The League",
+      "EmailLabel": "Email",
+      "EmailPlaceholder": "Vyplňte email",
+      "PasswordLabel": "Heslo",
+      "PasswordPlaceholder": "Vyplňte heslo",
+      "SubmitLoginButton": "Přihlásit se",
+      "DidYouForgetPasswordLink": "Zapomněli jste heslo?"
+    },
+    "NotFound": {
+      "Heading": "Page not found",
+      "RequestedPage": "we are sorry, but the page you requested was not found"
+    }
+  }
+}
