@@ -24,8 +24,6 @@ jobs:
       run: cd frontend  
     - name: yarn install, build, and test
       run: yarn install
-    - name: yarn test
-      run: yarn test
       env:
         CI: true
 
