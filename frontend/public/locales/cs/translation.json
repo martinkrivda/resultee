@@ -15,9 +15,27 @@
       "SubmitLoginButton": "Přihlásit se",
       "DidYouForgetPasswordLink": "Zapomněli jste heslo?"
     },
+    "Auth": {
+      "PasswordReset": {
+        "FormHeading": "Obnovení hesla",
+        "ResetPassword": "Resetovat heslo"
+      }
+    },
     "NotFound": {
       "Heading": "Page not found",
       "RequestedPage": "we are sorry, but the page you requested was not found"
     }
+  },
+  "Validations": {
+    "Required": "Povinný údaj",
+    "Email": "Neplatný email",
+    "PasswordsDontMatch": "Hesla se neshodují",
+    "EmailsContainNotEmail": "Některý ze zadaných emailů není validní",
+    "EmailsUnique": "Emaily musí být unikátní",
+    "EmailsMinMax": "Počet emailů musí být minimálně {{min}} a maximálně {{max}}",
+    "SelectRequired": "Musíte vybrat hodnotu",
+    "FileRequired": "Nahrajte soubor",
+    "NumberMin": "Zadejte číslo větší než {{min}}",
+    "Date": "Neplatné datum"
   }
 }

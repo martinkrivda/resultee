@@ -24,7 +24,7 @@ export const NotLoggedInHeader = () => {
       >
         {t('Organisms.NotLoggedInHeader.LoginLink')}
       </Button>
-      <Button href="#" color="primary" variant="contained">
+      <Button href={PATHNAMES.signUp()} color="primary" variant="contained">
         {t('Organisms.NotLoggedInHeader.RegisterLink')}
       </Button>
     </HeaderBase>

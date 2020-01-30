@@ -1,13 +1,21 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import PATHNAMES from './pathnames';
-import { LoginPage, HomePage, NotFoundPage } from './pages';
+import {
+  LoginPage,
+  SignUpPage,
+  HomePage,
+  NotFoundPage,
+  PasswordReset,
+} from './pages';
 import { useAuth, hasPrivilege } from './utils';
 export function Routes() {
   return (
     <Switch>
       <Route path={PATHNAMES.empty()} exact component={LoginPage} />
       <Route path={PATHNAMES.login()} exact component={LoginPage} />
+      <Route path={PATHNAMES.signUp()} exact component={SignUpPage} />
+      <Route path={PATHNAMES.passwordReset()} exact component={PasswordReset} />
       <Route path={PATHNAMES.home()} exact component={HomePage} />
 
       {/* Not found route */}

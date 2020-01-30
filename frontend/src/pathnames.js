@@ -1,11 +1,13 @@
 export default {
-    empty: () => '/',
-    login: () => '/login',
-    home: () => '/home',
-    registrationWithPrefilledEmail: () => `${registrationBase}/:email`,
-    getRegistrationWithPrefilledEmail: prefilledEmail =>
-      `${registrationBase}/${prefilledEmail}`,
-    registration: () => registrationBase,
-  };
+  empty: () => '/',
+  login: () => '/login',
+  signUp: () => '/signup',
+  passwordReset: () => '/password_reset',
+  home: () => '/home',
+  registrationWithPrefilledEmail: () => `${registrationBase}/:email`,
+  getRegistrationWithPrefilledEmail: prefilledEmail =>
+    `${registrationBase}/${prefilledEmail}`,
+  registration: () => registrationBase,
+};
 
-  const registrationBase = '/registration';
+const registrationBase = '/registration';

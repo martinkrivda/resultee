@@ -4,8 +4,9 @@ const enumPrefix = `${apiPrefix}/enum`;
 
 export default {
   login: () => `${apiPrefix}/auth/login`,
-  registration: () => `${apiPrefix}/auth/register-user`,
-  
+  signUp: () => `${apiPrefix}/auth/signup`,
+  resetPassword: () => `${apiPrefix}/auth/reset-password`,
+
   // enums
   enumEvents: () => `${enumPrefix}/events`,
 };
