@@ -10,6 +10,13 @@ Web application for live results of sports events
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=martinkrivda_resultee&metric=sqale_index)](https://sonarcloud.io/dashboard?id=martinkrivda_resultee)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=martinkrivda_resultee&metric=security_rating)](https://sonarcloud.io/dashboard?id=martinkrivda_resultee)
 
+| Branch | Status |
+|-------------|--------|
+| `develop`* | [![CircleCI](https://circleci.com/gh/martinkrivda/resultee/tree/develop.svg?style=svg)](https://circleci.com/gh/martinkrivda/resultee/tree/develop)
+| `master` |  |
+
+<sub>* `dev` was selected as the main branch</sub>
+
 We will be using [Node.js](https://nodejs.org/) v12.14.0.
 New JavaScript features (ES2015) are "enabled" for for all modern browsers with [Babel](https://babeljs.io/).
 
