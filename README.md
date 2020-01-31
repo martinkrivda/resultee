@@ -1,7 +1,8 @@
 # Resultee
+
 Web application for live results of sports events
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3a8182651a8043d0bb5f75b55ea81448)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=martinkrivda/resultee&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3a8182651a8043d0bb5f75b55ea81448)](https://www.codacy.com?utm_source=github.com&utm_medium=referral&utm_content=martinkrivda/resultee&utm_campaign=Badge_Grade)
 [![codebeat badge](https://codebeat.co/badges/416dd1d8-7593-4c1c-bada-47f9169ec98c)](https://codebeat.co/projects/github-com-martinkrivda-resultee-develop)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=martinkrivda_resultee&metric=alert_status)](https://sonarcloud.io/dashboard?id=martinkrivda_resultee)
@@ -10,12 +11,12 @@ Web application for live results of sports events
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=martinkrivda_resultee&metric=sqale_index)](https://sonarcloud.io/dashboard?id=martinkrivda_resultee)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=martinkrivda_resultee&metric=security_rating)](https://sonarcloud.io/dashboard?id=martinkrivda_resultee)
 
-| Branch | Status |
-|-------------|--------|
-| `develop`* | [![CircleCI](https://circleci.com/gh/martinkrivda/resultee/tree/develop.svg?style=svg)](https://circleci.com/gh/martinkrivda/resultee/tree/develop)
-| `master` |  |
+| Branch      | Status                                                                                                                                              |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `develop`\* | [![CircleCI](https://circleci.com/gh/martinkrivda/resultee/tree/develop.svg?style=svg)](https://circleci.com/gh/martinkrivda/resultee/tree/develop) |
+| `master`    |                                                                                                                                                     |
 
-<sub>* `dev` was selected as the main branch</sub>
+<sub>\* `dev` was selected as the main branch</sub>
 
 We will be using [Node.js](https://nodejs.org/) v12.14.0.
 New JavaScript features (ES2015) are "enabled" for for all modern browsers with [Babel](https://babeljs.io/).
@@ -58,6 +59,7 @@ yarn start
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+
 1. Create your feature branch: `git checkout -b Feature/my-new-feature`
 2. Commit your changes: `git commit -am 'Add some feature'`
 3. Push to the branch: `git push origin Feature/my-new-feature`
@@ -65,7 +67,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Credits
 
-* **Martin Křivda** - *Initial work*
+- **Martin Křivda** - _Initial work_
 
 ## License
 
