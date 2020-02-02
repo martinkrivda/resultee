@@ -1,5 +1,4 @@
-export { LoginPage } from './auth/login';
-export { SignUpPage } from './auth/signup';
 export { HomePage } from './home';
+export { ResultsPage } from './results';
 export { NotFoundPage } from './notFound';
-export { PasswordReset } from './auth';
+export { PasswordReset, LoginPage, SignUpPage } from './auth';

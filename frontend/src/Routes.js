@@ -7,6 +7,7 @@ import {
   HomePage,
   NotFoundPage,
   PasswordReset,
+  ResultsPage,
 } from './pages';
 import { useAuth, hasPrivilege } from './utils';
 export function Routes() {
@@ -17,6 +18,7 @@ export function Routes() {
       <Route path={PATHNAMES.signUp()} exact component={SignUpPage} />
       <Route path={PATHNAMES.passwordReset()} exact component={PasswordReset} />
       <Route path={PATHNAMES.home()} exact component={HomePage} />
+      <Route path={PATHNAMES.results()} exact component={ResultsPage} />
 
       {/* Not found route */}
       <Route path="*" component={NotFoundPage} />
