@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
+import PATHNAMES from '../pathnames';
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -14,6 +15,7 @@ const useStyles = makeStyles(theme => ({
   },
   toolbarTitle: {
     flexGrow: 1,
+    textDecoration: 'none',
   },
   link: {
     margin: theme.spacing(1, 1.5),
@@ -37,24 +39,26 @@ export const HeaderBase = ({ homeLinkTo, children }) => {
           noWrap
           className={classes.toolbarTitle}
         >
-          Company name
+          <Link color="inherit" href={homeLinkTo}>
+            Resultee
+          </Link>
         </Typography>
         <nav>
           <Link
             variant="button"
             color="textPrimary"
-            href="#"
+            href={PATHNAMES.home()}
             className={classes.link}
           >
-            Features
+            Home
           </Link>
           <Link
             variant="button"
             color="textPrimary"
-            href="#"
+            href={PATHNAMES.results()}
             className={classes.link}
           >
-            Enterprise
+            Results
           </Link>
           <Link
             variant="button"

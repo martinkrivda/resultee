@@ -8,6 +8,7 @@ export default {
   getRegistrationWithPrefilledEmail: prefilledEmail =>
     `${registrationBase}/${prefilledEmail}`,
   registration: () => registrationBase,
+  results: () => '/results',
 };
 
 const registrationBase = '/registration';
