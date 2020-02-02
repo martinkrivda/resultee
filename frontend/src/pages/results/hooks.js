@@ -6,5 +6,5 @@ export const useFetchData = () => {
     ENDPOINTS.getResultatCompetitionList(),
   );
 
-  return eventListState;
+  return { eventListState };
 };
