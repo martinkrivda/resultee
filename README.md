@@ -37,6 +37,7 @@ New JavaScript features (ES2015) are "enabled" for for all modern browsers with 
 
 - **[React docs](https://reactjs.org/docs/getting-started.html)**
 - frontend app is created using [create-react-app](https://create-react-app.dev/)
+- using [Atomic Design](https://atomicdesign.bradfrost.com/table-of-contents/)
 
 ### Local development
 
