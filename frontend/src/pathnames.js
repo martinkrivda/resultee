@@ -9,6 +9,7 @@ export default {
     `${registrationBase}/${prefilledEmail}`,
   registration: () => registrationBase,
   results: () => '/results',
+  getCompetitionDetail: id => `/results/${id}`,
 };
 
 const registrationBase = '/registration';

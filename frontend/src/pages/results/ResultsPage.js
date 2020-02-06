@@ -9,9 +9,12 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import { useHistory } from 'react-router-dom';
 
 import { NotLoggedInPageLayout } from '../../templates';
+import PATHNAMES from '../../pathnames';
 import { useFetchData } from './hooks';
+import { NoContainerSectionWithErrorBox } from '../../molecules';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -24,6 +27,10 @@ const useStyles = makeStyles(theme => ({
   },
   table: {
     minWidth: 650,
+  },
+  row: {
+    textDecoration: 'none',
+    cursor: 'pointer',
   },
 }));
 
@@ -55,6 +62,7 @@ const LayoutedEvents = ({ eventList }) => {
   const classes = useStyles();
 
   const [filterEvent, setFilterEvent] = useState('');
+  const history = useHistory();
 
   return (
     <>
@@ -71,7 +79,15 @@ const LayoutedEvents = ({ eventList }) => {
             {eventList.competitions
               .filter(({ date }) => new Date(date) - new Date() > 0)
               .map(row => (
-                <TableRow key={row.id}>
+                <TableRow
+                  hover
+                  component="a"
+                  onClick={() =>
+                    history.push(PATHNAMES.getCompetitionDetail(row.id))
+                  }
+                  key={row.id}
+                  className={classes.row}
+                >
                   <TableCell component="th" scope="row">
                     {row.date}
                   </TableCell>
