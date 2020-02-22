@@ -34,7 +34,10 @@ export function useRequest(initialState = {}) {
 
   useEffect(() => {
     return () => {
-      cancelRequest(stateRef, 'Caneling pending request on component unmount.');
+      cancelRequest(
+        stateRef,
+        'Canceling pending request on component unmount.',
+      );
     };
   }, []);
 

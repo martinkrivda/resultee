@@ -1,6 +1,4 @@
-import React, { useState, useRef } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router-dom';
+import React from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -10,9 +8,6 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-
-import { useRequest } from '../../utils/request';
-import ENDPOINTS from '../../endpoints';
 
 import { liveResults } from '../../utils/mocks';
 
@@ -24,8 +19,6 @@ const useStyles = makeStyles({
 
 export const ResultsList = () => {
   console.log(liveResults[0].results);
-  const { t } = useTranslation();
-  const { eventID } = useParams();
 
   const classes = useStyles();
 
