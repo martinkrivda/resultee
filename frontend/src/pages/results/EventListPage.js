@@ -32,7 +32,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export const ResultsPage = () => {
+export const EventListPage = () => {
   const { eventListState } = useFetchData();
 
   const errorList = [{ id: 1, error: eventListState.error }];
