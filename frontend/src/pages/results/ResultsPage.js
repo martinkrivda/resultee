@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Table from '@material-ui/core/Table';
@@ -14,7 +13,6 @@ import { useHistory } from 'react-router-dom';
 import { NotLoggedInPageLayout } from '../../templates';
 import PATHNAMES from '../../pathnames';
 import { useFetchData } from './hooks';
-import { NoContainerSectionWithErrorBox } from '../../molecules';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -35,8 +33,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export const ResultsPage = () => {
-  const { t } = useTranslation();
-
   const { eventListState } = useFetchData();
 
   const errorList = [{ id: 1, error: eventListState.error }];
@@ -58,10 +54,7 @@ export const ResultsPage = () => {
 };
 
 const LayoutedEvents = ({ eventList }) => {
-  const { t } = useTranslation();
   const classes = useStyles();
-
-  const [filterEvent, setFilterEvent] = useState('');
   const history = useHistory();
 
   return (

@@ -8,17 +8,23 @@ import {
   NotFoundPage,
   PasswordReset,
   ResultsPage,
+  EventDetail,
 } from './pages';
 import { useAuth, hasPrivilege } from './utils';
 export function Routes() {
   return (
     <Switch>
-      <Route path={PATHNAMES.empty()} exact component={LoginPage} />
+      <Route path={PATHNAMES.empty()} exact component={ResultsPage} />
       <Route path={PATHNAMES.login()} exact component={LoginPage} />
       <Route path={PATHNAMES.signUp()} exact component={SignUpPage} />
       <Route path={PATHNAMES.passwordReset()} exact component={PasswordReset} />
       <Route path={PATHNAMES.home()} exact component={HomePage} />
       <Route path={PATHNAMES.results()} exact component={ResultsPage} />
+      <Route
+        path={PATHNAMES.competitionDetail()}
+        exact
+        component={EventDetail}
+      />
 
       {/* Not found route */}
       <Route path="*" component={NotFoundPage} />
