@@ -16,7 +16,7 @@ Web application for live results of sports events
 | `develop`\* | [![CircleCI](https://circleci.com/gh/martinkrivda/resultee/tree/develop.svg?style=svg)](https://circleci.com/gh/martinkrivda/resultee/tree/develop) |
 | `master`    |                                                                                                                                                     |
 
-<sub>\* `dev` was selected as the main branch</sub>
+<sub>\* `develop` was selected as the main branch</sub>
 
 We will be using [Node.js](https://nodejs.org/) v12.14.0.
 New JavaScript features (ES2015) are "enabled" for for all modern browsers with [Babel](https://babeljs.io/).
