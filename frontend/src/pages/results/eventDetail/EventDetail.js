@@ -89,7 +89,7 @@ export const EventDetail = () => {
                   variant="scrollable"
                   value={value}
                   onChange={handleChange}
-                  aria-label="Vertical tabs example"
+                  aria-label="Classes"
                   className={classes.tabs}
                 >
                   {eventClassesState.data.classes.map((category, i) => (

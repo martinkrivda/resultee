@@ -3,7 +3,7 @@ import React from 'react';
 import { NotLoggedInHeader } from '../organisms';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
-import { NoContainerSectionWithErrorBox } from '../molecules';
+import { NoContainerSectionWithErrorBox, CopyrightWithBox } from '../molecules';
 
 const useStyles = makeStyles(theme => ({
   heroContent: {
@@ -25,6 +25,7 @@ export const NotLoggedInPageLayout = ({ children, errorList }) => {
           <Container fixed component="main" className={classes.heroContent}>
             {children}
           </Container>
+          <CopyrightWithBox />
         </div>
       </NoContainerSectionWithErrorBox>
     </>
