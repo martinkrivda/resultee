@@ -1,4 +1,8 @@
 {
+  "Atoms": {
+    "Error": { "ErrorTitle": "Error" },
+    "InfoBox": { "Title": "Informace" }
+  },
   "Organisms": {
     "NotLoggedInHeader": {
       "LoginLink": "Přihlásit",
