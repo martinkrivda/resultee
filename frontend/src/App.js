@@ -1,16 +1,28 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { Routes } from './Routes';
 import { ApiProvider } from './utils/api';
 import { AuthProvider } from './utils/auth';
 import { ScrollToTop } from './atoms';
+import { useDarkMode } from './utils/useDarkMode';
 
 export default function App() {
+  const [themeObject, componentMounted] = useDarkMode();
+  const themeConfig = createMuiTheme(themeObject);
+
+  if (!componentMounted) {
+    return <div />;
+  }
   return (
-    <AllProviders>
-      <Routes />
-    </AllProviders>
+    <ThemeProvider theme={themeConfig}>
+      <CssBaseline />
+      <AllProviders>
+        <Routes />
+      </AllProviders>
+    </ThemeProvider>
   );
 }
 

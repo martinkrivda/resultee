@@ -74,7 +74,6 @@ const LayoutedEvents = ({ eventList }) => {
               .map(row => (
                 <TableRow
                   hover
-                  component="a"
                   onClick={() =>
                     history.push(PATHNAMES.getCompetitionDetail(row.id))
                   }

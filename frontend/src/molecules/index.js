@@ -5,3 +5,4 @@ export {
 export { TextFieldWithLabel } from './TextFieldWithLabel';
 export { CheckBoxWithLabel } from './CheckBoxWithLabel';
 export { CopyrightWithBox } from './CopyrightWithBox';
+export { ResultRow } from './ResultRow';
