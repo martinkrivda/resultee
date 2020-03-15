@@ -72,13 +72,22 @@ function sendRequest(
       const { data } = response;
       log(`[api.${method}] success`, url, data);
 
-      setState(oldState => ({
-        ...oldState,
-        data,
-        isLoading: false,
-        cancelSource: null,
-        error: null,
-      }));
+      if (data.status !== 'NOT MODIFIED') {
+        setState(oldState => ({
+          ...oldState,
+          data,
+          isLoading: false,
+          cancelSource: null,
+          error: null,
+        }));
+      } else {
+        setState(oldState => ({
+          ...oldState,
+          isLoading: false,
+          cancelSource: null,
+          error: null,
+        }));
+      }
 
       if (onSuccess) {
         onSuccess(response);

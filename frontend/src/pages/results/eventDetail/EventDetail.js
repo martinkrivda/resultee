@@ -11,6 +11,7 @@ import Box from '@material-ui/core/Box';
 
 import { NotLoggedInPageLayout } from '../../../templates';
 import { useFetchData } from './hooks';
+import { ResultsTable } from '../../../organisms';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -35,12 +36,15 @@ const useStyles = makeStyles(theme => ({
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
-    height: 300,
+    maxHeight: 500,
   },
   break: {
     display: 'inline-block',
     flexBasis: 100,
     height: 0,
+  },
+  panel: {
+    width: '100%',
   },
 }));
 
@@ -73,7 +77,7 @@ export const EventDetail = () => {
               {eventDetailState.data.organizer} / {eventDetailState.data.date}
             </Typography>
           </div>
-          <break className={classes.break}></break>
+          <Box className={classes.break}></Box>
           {eventClassesState.isLoading && (
             <div className={classes.root}>
               <CircularProgress />
@@ -93,30 +97,14 @@ export const EventDetail = () => {
                   className={classes.tabs}
                 >
                   {eventClassesState.data.classes.map((category, i) => (
-                    <Tab label={category.className} {...a11yProps(i)} />
+                    <Tab label={category.className} key={i} {...a11yProps(i)} />
                   ))}
                 </Tabs>
-                <TabPanel value={value} index={0}>
-                  Item One
-                </TabPanel>
-                <TabPanel value={value} index={1}>
-                  Item Two
-                </TabPanel>
-                <TabPanel value={value} index={2}>
-                  Item Three
-                </TabPanel>
-                <TabPanel value={value} index={3}>
-                  Item Four
-                </TabPanel>
-                <TabPanel value={value} index={4}>
-                  Item Five
-                </TabPanel>
-                <TabPanel value={value} index={5}>
-                  Item Six
-                </TabPanel>
-                <TabPanel value={value} index={6}>
-                  Item Seven
-                </TabPanel>
+                {eventClassesState.data.classes.map((category, i) => (
+                  <TabPanel value={value} index={i} key={i}>
+                    <ResultsTable classId={category.className}></ResultsTable>
+                  </TabPanel>
+                ))}
               </div>
             ))}
         </div>
@@ -127,9 +115,10 @@ export const EventDetail = () => {
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
-
+  const classes = useStyles();
   return (
     <Typography
+      className={classes.panel}
       component="div"
       role="tabpanel"
       hidden={value !== index}

@@ -3,10 +3,26 @@
     "Error": { "ErrorTitle": "Error" },
     "InfoBox": { "Title": "Informace" }
   },
+  "Molecules": {
+    "ResultRow": {
+      "DNS": "Nenastoupil",
+      "DNF": "Nedokončil",
+      "DSQ": "Diskvalifikován",
+      "NC": "Mimo soutěž",
+      "running": "Na trati"
+    }
+  },
   "Organisms": {
     "NotLoggedInHeader": {
       "LoginLink": "Přihlásit",
       "RegisterLink": "Registrovat"
+    },
+    "ResultsTable": {
+      "Name": "Jméno",
+      "Club": "Klub",
+      "Start": "Start",
+      "Time": "Čas",
+      "Loss": "Ztráta"
     }
   },
   "Page": {

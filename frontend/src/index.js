@@ -1,14 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { ThemeProvider } from '@material-ui/core/styles';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import { transitions, positions, Provider as AlertProvider } from 'react-alert';
 import AlertTemplate from 'react-alert-template-basic';
 import './i18n';
 import App from './App';
-import theme from './theme';
 import * as serviceWorker from './serviceWorker';
 
 const alertOptions = {
@@ -19,12 +16,9 @@ const alertOptions = {
 };
 
 const Root = () => (
-  <ThemeProvider theme={theme}>
-    <CssBaseline />
-    <AlertProvider template={AlertTemplate} {...alertOptions}>
-      <App />
-    </AlertProvider>
-  </ThemeProvider>
+  <AlertProvider template={AlertTemplate} {...alertOptions}>
+    <App />
+  </AlertProvider>
 );
 
 ReactDOM.render(<Root />, document.getElementById('root'));

@@ -14,8 +14,8 @@ export default {
     `https://liveresultat.orientering.se/api.php?method=getclasses&comp=${id}`,
   getResultatLastPassings: id =>
     `https://liveresultat.orientering.se/api.php?method=getlastpassings&comp=${id}`,
-  getResultatClassResults: (id, classId) =>
-    `https://liveresultat.orientering.se/api.php?comp=${id}&method=getclassresults&unformattedTimes=true&class=${classId}`,
+  getResultatClassResults: (id, classId, lastHash) =>
+    `https://liveresultat.orientering.se/api.php?comp=${id}&method=getclassresults&unformattedTimes=true&class=${classId}&last_hash=${lastHash}`,
   getClubResults: (id, clubId) =>
     `https://liveresultat.orientering.se/api.php?comp=${id}&method=getcclubresults&unformattedTimes=true&club=${clubId}`,
 
