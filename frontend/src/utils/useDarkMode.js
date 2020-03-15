@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
-import themeObject from '../theme';
+import theme from '../theme';
 
 export const useDarkMode = () => {
-  const [theme, setTheme] = useState(themeObject);
+  const [themeObject, setTheme] = useState(theme);
   const [componentMounted, setComponentMounted] = useState(false);
   const {
     palette: { type },
-  } = theme;
+  } = themeObject;
   const toggleDarkMode = () => {
     const updatedTheme = {
-      ...theme,
+      ...themeObject,
       palette: {
-        ...theme.palette,
+        ...themeObject.palette,
         type: type === 'light' ? 'dark' : 'light',
       },
     };
@@ -25,5 +25,5 @@ export const useDarkMode = () => {
     console.log(localTheme);
   }, []);
 
-  return [theme, toggleDarkMode, componentMounted];
+  return [themeObject, toggleDarkMode, componentMounted];
 };

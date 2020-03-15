@@ -24,26 +24,7 @@ export function ResultRow({ row, ...inputProps }) {
       hover
     >
       <TableCell component="th" scope="row">
-        {row.status === 0 ? (
-          row.place + '.'
-        ) : row.status === 3 ? (
-          <TextWithTooltip text={t('Molecules.ResultRow.DSQ')} label="DSQ">
-            <Emoji symbol="🙈" label="monkey" />
-          </TextWithTooltip>
-        ) : row.status === 10 ? (
-          <TextWithTooltip
-            text={t('Molecules.ResultRow.running')}
-            label="running"
-          >
-            <Emoji symbol="🏃‍♂️" label="runner" />
-          </TextWithTooltip>
-        ) : (
-          row.status === 1 && (
-            <TextWithTooltip text={t('Molecules.ResultRow.DNS')} label="DNS">
-              <Emoji symbol="⌛️" label="clock" />
-            </TextWithTooltip>
-          )
-        )}
+        {getResultsStatus()}
       </TableCell>
       <TableCell size="small">
         <Grid>
@@ -63,21 +44,7 @@ export function ResultRow({ row, ...inputProps }) {
       <Hidden smDown>
         <TableCell>{formatTime(row.start * 10)}</TableCell>
       </Hidden>
-      <TableCell>
-        {row.status === 0 ? (
-          formatTime(row.result * 10)
-        ) : row.status === 3 ? (
-          <TextWithTooltip text={t('Molecules.ResultRow.DSQ')} label="DSQ">
-            DSQ
-          </TextWithTooltip>
-        ) : (
-          row.status === 1 && (
-            <TextWithTooltip text={t('Molecules.ResultRow.DNS')} label="DNS">
-              DNS
-            </TextWithTooltip>
-          )
-        )}
-      </TableCell>
+      <TableCell>{getResultTime()}</TableCell>
       <Hidden smDown>
         <TableCell>
           {row.status === 0 &&
@@ -86,6 +53,42 @@ export function ResultRow({ row, ...inputProps }) {
       </Hidden>
     </TableRow>
   );
+
+  function getResultTime() {
+    return row.status === 0 ? (
+      formatTime(row.result * 10)
+    ) : row.status === 3 ? (
+      <TextWithTooltip text={t('Molecules.ResultRow.DSQ')} label="DSQ">
+        DSQ
+      </TextWithTooltip>
+    ) : (
+      row.status === 1 && (
+        <TextWithTooltip text={t('Molecules.ResultRow.DNS')} label="DNS">
+          DNS
+        </TextWithTooltip>
+      )
+    );
+  }
+
+  function getResultsStatus() {
+    return row.status === 0 ? (
+      row.place + '.'
+    ) : row.status === 3 ? (
+      <TextWithTooltip text={t('Molecules.ResultRow.DSQ')} label="DSQ">
+        <Emoji symbol="🙈" label="monkey" />
+      </TextWithTooltip>
+    ) : row.status === 10 ? (
+      <TextWithTooltip text={t('Molecules.ResultRow.running')} label="running">
+        <Emoji symbol="🏃‍♂️" label="runner" />
+      </TextWithTooltip>
+    ) : (
+      row.status === 1 && (
+        <TextWithTooltip text={t('Molecules.ResultRow.DNS')} label="DNS">
+          <Emoji symbol="⌛️" label="clock" />
+        </TextWithTooltip>
+      )
+    );
+  }
 }
 
 function getStripedStyle(index) {

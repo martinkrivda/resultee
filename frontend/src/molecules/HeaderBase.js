@@ -13,7 +13,6 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import PATHNAMES from '../pathnames';
-import { useDarkMode } from '../utils/useDarkMode';
 
 const drawerWidth = 240;
 
@@ -63,7 +62,6 @@ export const HeaderBase = ({ homeLinkTo, children }) => {
   function handleDrawerToggle() {
     setMobileOpen(!mobileOpen);
   }
-  const [toggleDarkMode] = useDarkMode();
   const drawer = (
     <div>
       <List>

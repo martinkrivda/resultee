@@ -10,8 +10,8 @@ import { ScrollToTop } from './atoms';
 import { useDarkMode } from './utils/useDarkMode';
 
 export default function App() {
-  const [theme, componentMounted] = useDarkMode();
-  const themeConfig = createMuiTheme(theme);
+  const [themeObject, componentMounted] = useDarkMode();
+  const themeConfig = createMuiTheme(themeObject);
 
   if (!componentMounted) {
     return <div />;
