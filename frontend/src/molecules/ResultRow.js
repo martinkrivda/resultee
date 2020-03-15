@@ -24,7 +24,7 @@ export function ResultRow({ row, ...inputProps }) {
       hover
     >
       <TableCell component="th" scope="row">
-        {getResultsStatus()}
+        {getResultStatus()}
       </TableCell>
       <TableCell size="small">
         <Grid>
@@ -70,7 +70,7 @@ export function ResultRow({ row, ...inputProps }) {
     );
   }
 
-  function getResultsStatus() {
+  function getResultStatus() {
     return row.status === 0 ? (
       row.place + '.'
     ) : row.status === 3 ? (
