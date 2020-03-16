@@ -7,7 +7,7 @@ import { NoContainerSectionWithErrorBox, CopyrightWithBox } from '../molecules';
 
 const useStyles = makeStyles(theme => ({
   heroContent: {
-    padding: theme.spacing(8, 0, 6),
+    padding: theme.spacing(3, 0, 6),
   },
 }));
 

@@ -11,16 +11,21 @@ import Box from '@material-ui/core/Box';
 
 import { NotLoggedInPageLayout } from '../../../templates';
 import { useFetchData } from './hooks';
+import { Card, CardHeader, CardBody } from '../../../atoms';
 import { ResultsTable } from '../../../organisms';
 
 const useStyles = makeStyles(theme => ({
   root: {
+    padding: theme.spacing(0, 3),
     display: 'flex',
     '& > * + *': {
       marginLeft: theme.spacing(2),
     },
     position: 'relative',
     justifyContent: 'center',
+  },
+  alert: {
+    margin: theme.spacing(0, 3),
   },
   category: {
     flexGrow: 1,
@@ -68,15 +73,11 @@ export const EventDetail = () => {
         </div>
       )}
       {eventDetailState.data && (
-        <div>
-          <div className={classes.root}>
-            <Typography variant="h3" component="h3">
-              {eventDetailState.data.name}
-            </Typography>
-            <Typography variant="h6" component="h6">
-              {eventDetailState.data.organizer} / {eventDetailState.data.date}
-            </Typography>
-          </div>
+        <>
+          <CompetitionInfo
+            data={eventDetailState.data}
+            classes={classes}
+          ></CompetitionInfo>
           <Box className={classes.break}></Box>
           {eventClassesState.isLoading && (
             <div className={classes.root}>
@@ -85,7 +86,9 @@ export const EventDetail = () => {
           )}
           {eventClassesState.data &&
             (eventClassesState.data.classes.length < 1 ? (
-              <Alert severity="warning">Classes are not defined yet!</Alert>
+              <div className={classes.alert}>
+                <Alert severity="warning">Classes are not defined yet!</Alert>
+              </div>
             ) : (
               <div className={classes.category}>
                 <Tabs
@@ -107,7 +110,7 @@ export const EventDetail = () => {
                 ))}
               </div>
             ))}
-        </div>
+        </>
       )}
     </NotLoggedInPageLayout>
   );
@@ -143,3 +146,24 @@ function a11yProps(index) {
     'aria-controls': `vertical-tabpanel-${index}`,
   };
 }
+
+const CompetitionInfo = props => (
+  <div className={props.classes.root}>
+    <Card>
+      <CardHeader color="info">
+        <Typography
+          variant="h3"
+          component="h3"
+          className={props.classes.cardTitle}
+        >
+          {props.data.name}
+        </Typography>
+      </CardHeader>
+      <CardBody>
+        <Typography variant="h6" component="h6">
+          {props.data.organizer} / {props.data.date}
+        </Typography>
+      </CardBody>
+    </Card>
+  </div>
+);
