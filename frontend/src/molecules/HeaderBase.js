@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import AppBar from '@material-ui/core/AppBar';
+import Button from '@material-ui/core/Button';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -8,6 +9,9 @@ import Link from '@material-ui/core/Link';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
+import Brightness4Icon from '@material-ui/icons/Brightness4';
+import TranslateIcon from '@material-ui/icons/Translate';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -167,6 +171,14 @@ export const HeaderBase = ({ homeLinkTo, children }) => {
             </Link>
           </Hidden>
         </nav>
+        <Button>
+          <TranslateIcon />
+          <Hidden smDown>Language</Hidden>
+          <KeyboardArrowDownIcon />
+        </Button>
+        <IconButton>
+          <Brightness4Icon />
+        </IconButton>
         {children}
       </Toolbar>
     </AppBar>
