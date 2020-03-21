@@ -17,6 +17,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import PATHNAMES from '../pathnames';
+import { LanguageMenu } from '../atoms';
 
 const drawerWidth = 240;
 
@@ -171,11 +172,11 @@ export const HeaderBase = ({ homeLinkTo, children }) => {
             </Link>
           </Hidden>
         </nav>
-        <Button>
+        <LanguageMenu>
           <TranslateIcon />
           <Hidden smDown>Language</Hidden>
           <KeyboardArrowDownIcon />
-        </Button>
+        </LanguageMenu>
         <IconButton>
           <Brightness4Icon />
         </IconButton>
