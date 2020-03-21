@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -17,6 +16,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import PATHNAMES from '../pathnames';
+import { LanguageMenu } from '../atoms';
 
 const drawerWidth = 240;
 
@@ -171,11 +171,11 @@ export const HeaderBase = ({ homeLinkTo, children }) => {
             </Link>
           </Hidden>
         </nav>
-        <Button>
+        <LanguageMenu>
           <TranslateIcon />
           <Hidden smDown>Language</Hidden>
           <KeyboardArrowDownIcon />
-        </Button>
+        </LanguageMenu>
         <IconButton>
           <Brightness4Icon />
         </IconButton>
